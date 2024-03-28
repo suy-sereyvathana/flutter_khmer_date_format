@@ -1,6 +1,6 @@
 name: khmer_date_format
 description: "A Flutter package for format khmer"
-version: 0.0.1
+version: 0.0.3
 homepage: "https://github.com/suy-sereyvathana"
 
 environment:

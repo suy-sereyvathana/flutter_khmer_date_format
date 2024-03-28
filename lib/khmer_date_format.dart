@@ -1,4 +1,4 @@
-import 'package:khmer_date_format/function/constant_functions.dart';
+import 'package:khmer_date_format/constant_functions.dart';
 
 class KhmerDateFormatter {
   static String formatKhmerDate(DateTime date) {
