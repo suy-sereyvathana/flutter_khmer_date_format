@@ -1,13 +1,14 @@
 import 'package:khmer_date_format/constant_functions.dart';
 
-class KhmerDateFormatter {
+class KhmerDateFormat {
   static String formatKhmerDate(DateTime date) {
-    // Convert the date to Khmer numerals
     String? khmerDay = ConstantFunctions().getKhmerDay(date.weekday.toString());
-    String? khmerDate = ConstantFunctions().convertLatinNumtoKhmerNum(date.day);
-    String khmerMonth = ConstantFunctions.khmerMonths[date.month - 1];
+    String? khmerDate =
+        ConstantFunctions().convertLatinNumtoKhmerString(date.day);
+    String? khmerMonth =
+        ConstantFunctions().getKhmerMonthByMonthNum(date.month);
     String? khmerYear =
-        ConstantFunctions().convertLatinNumtoKhmerNum(date.year);
+        ConstantFunctions().convertLatinNumtoKhmerString(date.year);
 
     return 'ថ្ងៃ$khmerDay ទី$khmerDate ខែ$khmerMonth ឆ្នាំ$khmerYear';
   }

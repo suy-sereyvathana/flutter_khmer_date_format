@@ -1,0 +1,1 @@
+enum FormDateFormat { ddmmyyyy, yyyymmdd }
