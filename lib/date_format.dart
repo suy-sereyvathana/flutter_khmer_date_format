@@ -1,5 +1,8 @@
+import 'package:khmer_date_format/enum.dart';
+
 class DateFormat {
-  String formatDate(DateTime date, {String? format}) {
+  String formatDate(DateTime date,
+      {FormDateFormat? format, String? seperate = "-"}) {
     String newDay = date.day.toString();
     String newMonth = "";
     String newYear = date.year.toString();
@@ -12,8 +15,10 @@ class DateFormat {
 
     String resultDate = "$newYear-$newMonth-$newDay";
 
-    if (format == "dd-mm-yyyy") {
+    if (format == FormDateFormat.DDMMYYYY && seperate == "-") {
       resultDate = "$newDay-$newMonth-$newYear";
+    } else if (format == FormDateFormat.DDMMYYYY && seperate == "/") {
+      resultDate = "$newDay/$newMonth/$newYear";
     } else if (format == "mm/dd/yyyy") {
       resultDate = "$newDay/$newMonth/$newYear";
     } else if (format == "yyyy/mm/dd") {

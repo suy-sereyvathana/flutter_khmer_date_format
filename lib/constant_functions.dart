@@ -170,7 +170,7 @@ class ConstantFunctions {
         d = "អាទិត្យ";
         break;
       default:
-        d = "Invalid month";
+        d = "Invalid day";
         break;
     }
 
@@ -203,7 +203,7 @@ class ConstantFunctions {
         d = "Subday";
         break;
       default:
-        d = "Invalid month";
+        d = "Invalid day";
         break;
     }
 

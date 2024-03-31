@@ -1,6 +1,5 @@
 Hello from Suy Sereyvathana
 
-Install this package by: flutter pub add khmer_date_format
 
 How to use:
 

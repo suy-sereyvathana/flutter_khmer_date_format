@@ -2,6 +2,7 @@
 // export "constant_functions.dart";
 
 import 'package:khmer_date_format/date_format.dart';
+import 'package:khmer_date_format/enum.dart';
 import 'package:khmer_date_format/khmer_date_format.dart';
 
 void main(List<String> args) {
@@ -9,5 +10,5 @@ void main(List<String> args) {
 
   print(KhmerDateFormat.formatKhmerDate(now));
 
-  print(DateFormat().formatDate(now, format: 'dd-mm-yyyy'));
+  print(DateFormat().formatDate(now, format: FormDateFormat.DDMMYYYY));
 }
