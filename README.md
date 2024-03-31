@@ -9,7 +9,7 @@ How to use:
 
     DateTime now = DateTime.now();
 
-    print(KhmerDateFormatter.formatKhmerDate(now));
+    print(KhmerDateFormat.formatKhmerDate(now));
 
     # Example: ថ្ងៃចន្ទ ទី០១ ខែមករា ឆ្នាំ២០២៤
 
@@ -17,6 +17,7 @@ How to use:
     # Date Format
 
     import 'package:khmer_date_format/date_format.dart';
+    import 'package:khmer_date_format/enums/date_format_enum.dart';
 
     DateTime now = DateTime.now();
 
@@ -24,7 +25,7 @@ How to use:
 
     # Example: 2024-01-01
 
-    print(DateFormat().formatDate(now, format: 'dd-mm-yyyy'));
+    print(DateFormat().formatDate(now, format: DateFormatEnum.DDMMYYYY));
 
     # Example: 01-01-2024
 

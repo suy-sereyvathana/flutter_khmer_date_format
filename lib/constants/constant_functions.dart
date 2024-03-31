@@ -1,34 +1,13 @@
+import 'package:khmer_date_format/constants/constant_variables.dart';
+
 class ConstantFunctions {
-  static List<String> khmerNumerals = [
-    '០',
-    '១',
-    '២',
-    '៣',
-    '៤',
-    '៥',
-    '៦',
-    '៧',
-    '៨',
-    '៩'
-  ];
-
-  // Define Khmer months
-  static List<String> khmerMonths = [
-    'មករា',
-    'កុម្ភៈ',
-    'មីនា',
-    'មេសា',
-    'ឧសភា',
-    'មិថុនា',
-    'កក្កដា',
-    'សីហា',
-    'កញ្ញា',
-    'តុលា',
-    'វិច្ឆិកា',
-    'ធ្នូ'
-  ];
-
-  String? convertLatinNumtoKhmerString(int n) {
+  /// ```
+  ///
+  /// Required Integer parameter
+  /// Example: convertKhString(1)
+  /// Result: ១
+  /// ```
+  String? convertKhString(int n) {
     String numString = n.toString();
 
     numString = numString.replaceAll('0', '០');
@@ -45,7 +24,7 @@ class ConstantFunctions {
     return numString;
   }
 
-  int? convertLatinNumtoKhmerNum(int n) {
+  int? convertKhNum(int n) {
     String num = n.toString();
 
     num = num.replaceAll('0', '០');
@@ -62,7 +41,13 @@ class ConstantFunctions {
     return int.parse(num);
   }
 
-  int? convertKhmerStringToLatinNum(String n) {
+  /// ```
+  ///
+  /// Required String parameter
+  /// Example: reverseKhNum("១")
+  /// Result: 1
+  /// ```
+  int? reverseKhNum(String n) {
     n = n.replaceAll('០', "0");
     n = n.replaceAll('១', "1");
     n = n.replaceAll('២', "2");
@@ -77,7 +62,7 @@ class ConstantFunctions {
     return int.parse(n);
   }
 
-  String? convertKhmerStringToLatinString(String n) {
+  String? reverseKhString(String n) {
     n = n.replaceAll('០', "0");
     n = n.replaceAll('១', "1");
     n = n.replaceAll('២', "2");
@@ -93,7 +78,7 @@ class ConstantFunctions {
   }
 
   String? getKhmerMonthByMonthNum(int monthNum) {
-    return khmerMonths[monthNum - 1];
+    return ConstantVariables.khmerMonths[monthNum - 1];
   }
 
   String? getKhmerMonth(String latinMonth) {
