@@ -2,7 +2,7 @@ import 'package:khmer_date_format/constants/constant_functions.dart';
 import 'package:khmer_date_format/constants/constant_variables.dart';
 
 class LatinDateFormat {
-  static DateTime latinFormat(String date) {
+  static DateTime formatLatinDate(String date) {
     DateTime latinDate = DateTime.now();
 
     List dateArray = date.split('-').toList();

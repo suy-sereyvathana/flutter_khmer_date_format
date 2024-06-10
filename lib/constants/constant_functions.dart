@@ -81,166 +81,108 @@ class ConstantFunctions {
     return ConstantVariables.khmerMonths[monthNum - 1];
   }
 
-  String getKhmerMonth(String latinMonth) {
-    String d;
-
-    switch (latinMonth.substring(0, 3).toLowerCase()) {
-      case "jan":
-        d = "មករា";
-        break;
-      case "feb":
-        d = "កុម្ភៈ";
-        break;
-      case "mar":
-        d = "មីនា";
-        break;
-      case "apr":
-        d = "មេសា";
-        break;
-      case "may":
-        d = "ឧសភា";
-        break;
-      case "jun":
-        d = "មិថុនា";
-        break;
-      case "jul":
-        d = "កក្កដា";
-        break;
-      case "aug":
-        d = "សីហា";
-        break;
-      case "sep":
-        d = "កញ្ញា";
-        break;
-      case "oct":
-        d = "តុលា";
-        break;
-      case "nov":
-        d = "វិច្ឆិកា";
-        break;
-      case "dec":
-        d = "ធ្នូ";
-        break;
+  String getKhmerMonth(DateTime date) {
+    switch (date.month - 1) {
+      case 0:
+        return "មករា";
+      case 1:
+        return "កុម្ភៈ";
+      case 2:
+        return "មីនា";
+      case 3:
+        return "មេសា";
+      case 4:
+        return "ឧសភា";
+      case 5:
+        return "មិថុនា";
+      case 6:
+        return "កក្ដដា";
+      case 7:
+        return "សីហា";
+      case 8:
+        return "កញ្ញា";
+      case 9:
+        return "តុលា";
+      case 10:
+        return "វិច្ឆិកា";
+      case 11:
+        return "ធ្នូ";
       default:
-        d = "Invalid month";
-        break;
+        return "invalid weekday";
     }
-
-    return d;
   }
 
-  String getKhmerDay(String latinDay) {
-    String d;
-
-    switch (latinDay) {
-      case "1":
-        d = "ចន្ទ";
-        break;
-      case "2":
-        d = "អង្គារ";
-        break;
-      case "3":
-        d = "ពុធ";
-        break;
-      case "4":
-        d = "ព្រហស្បតិ៍";
-        break;
-      case "5":
-        d = "សុក្រ";
-        break;
-      case "6":
-        d = "សៅរ៍";
-        break;
-      case "7":
-        d = "អាទិត្យ";
-        break;
+  String getKhmerDay(DateTime date, {isShort = false}) {
+    switch (date.weekday) {
+      case 1:
+        return isShort ? "ចន្ទ" : "ចន្ទ";
+      case 2:
+        return isShort ? "អង្គ" : "អង្គារ៍";
+      case 3:
+        return isShort ? "ពុធ" : "ពុធ";
+      case 4:
+        return isShort ? "ព្រហ" : "ព្រហស្បតិ៍";
+      case 5:
+        return isShort ? "សុក្រ" : "សុក្រ";
+      case 6:
+        return isShort ? "សៅរ៍" : "សៅរ៍";
+      case 7:
+        return isShort ? "អាទិ" : "អាទិត្យ";
       default:
-        d = "Invalid day";
-        break;
+        return "invalid weekday";
     }
-
-    return d;
   }
 
-  String getLatinDay(String dayNumber) {
-    String d;
-
-    switch (dayNumber) {
-      case "1":
-        d = "Monday";
-        break;
-      case "2":
-        d = "Tuesday";
-        break;
-      case "3":
-        d = "Wednesday";
-        break;
-      case "4":
-        d = "Thursday";
-        break;
-      case "5":
-        d = "Friday";
-        break;
-      case "6":
-        d = "Saturday";
-        break;
-      case "7":
-        d = "Subday";
-        break;
+  String getLatinDay(DateTime date, {isShort = false}) {
+    switch (date.weekday) {
+      case 1:
+        return isShort ? "Mon" : "Monday";
+      case 2:
+        return isShort ? "Tue" : "Tuesday";
+      case 3:
+        return isShort ? "Wed" : "Wednesday";
+      case 4:
+        return isShort ? "Thu" : "Thursday";
+      case 5:
+        return isShort ? "Fri" : "Friday";
+      case 6:
+        return isShort ? "Sat" : "Saturday";
+      case 7:
+        return isShort ? "Sun" : "Sunday";
       default:
-        d = "Invalid day";
-        break;
+        return "invalid weekday";
     }
-
-    return d;
   }
 
   // String monthNumber should be int
-  String getLatinMonth(String monthNumber) {
-    String d;
-
-    switch (monthNumber) {
-      case "1":
-        d = "January";
-        break;
-      case "2":
-        d = "February";
-        break;
-      case "3":
-        d = "March";
-        break;
-      case "4":
-        d = "April";
-        break;
-      case "5":
-        d = "May";
-        break;
-      case "6":
-        d = "June";
-        break;
-      case "7":
-        d = "July";
-        break;
-      case "8":
-        d = "August";
-        break;
-      case "9":
-        d = "September";
-        break;
-      case "10":
-        d = "October";
-        break;
-      case "11":
-        d = "November";
-        break;
-      case "12":
-        d = "December";
-        break;
+  String getLatinMonth(DateTime date, {isShort = false}) {
+    switch (date.month - 1) {
+      case 0:
+        return isShort ? "Jan" : "January";
+      case 1:
+        return isShort ? "Feb" : "February";
+      case 2:
+        return isShort ? "Mar" : "March";
+      case 3:
+        return isShort ? "Apr" : "Apirl";
+      case 4:
+        return isShort ? "May" : "May";
+      case 5:
+        return isShort ? "Jun" : "June";
+      case 6:
+        return isShort ? "Jul" : "July";
+      case 7:
+        return isShort ? "Aug" : "August";
+      case 8:
+        return isShort ? "Sep" : "September";
+      case 9:
+        return isShort ? "Oct" : "October";
+      case 10:
+        return isShort ? "Nov" : "November";
+      case 11:
+        return isShort ? "Dec" : "December";
       default:
-        d = "Invalid month";
-        break;
+        return "invalid weekday";
     }
-
-    return d;
   }
 }
