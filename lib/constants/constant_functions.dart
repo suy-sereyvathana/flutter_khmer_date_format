@@ -7,7 +7,7 @@ class ConstantFunctions {
   /// Example: convertKhString(1)
   /// Result: ១
   /// ```
-  String? convertKhString(int n) {
+  String convertKhString(int n) {
     String numString = n.toString();
 
     numString = numString.replaceAll('0', '០');
@@ -24,7 +24,7 @@ class ConstantFunctions {
     return numString;
   }
 
-  int? converToKhNum(int n) {
+  int converToKhNum(int n) {
     String num = n.toString();
 
     num = num.replaceAll('0', '០');
@@ -47,7 +47,7 @@ class ConstantFunctions {
   /// Example: reverseKhNum("១")
   /// Result: 1
   /// ```
-  int? reverseKhNum(String n) {
+  int reverseKhNum(String n) {
     n = n.replaceAll('០', "0");
     n = n.replaceAll('១', "1");
     n = n.replaceAll('២', "2");
@@ -62,7 +62,7 @@ class ConstantFunctions {
     return int.parse(n);
   }
 
-  String? reverseKhString(String n) {
+  String reverseKhString(String n) {
     n = n.replaceAll('០', "0");
     n = n.replaceAll('១', "1");
     n = n.replaceAll('២', "2");
@@ -77,11 +77,11 @@ class ConstantFunctions {
     return n;
   }
 
-  String? getKhmerMonthByMonthNum(int monthNum) {
+  String getKhmerMonthByMonthNum(int monthNum) {
     return ConstantVariables.khmerMonths[monthNum - 1];
   }
 
-  String? getKhmerMonth(String latinMonth) {
+  String getKhmerMonth(String latinMonth) {
     String d;
 
     switch (latinMonth.substring(0, 3).toLowerCase()) {
@@ -129,7 +129,7 @@ class ConstantFunctions {
     return d;
   }
 
-  String? getKhmerDay(String latinDay) {
+  String getKhmerDay(String latinDay) {
     String d;
 
     switch (latinDay) {
@@ -162,7 +162,7 @@ class ConstantFunctions {
     return d;
   }
 
-  String? getLatinDay(String dayNumber) {
+  String getLatinDay(String dayNumber) {
     String d;
 
     switch (dayNumber) {
@@ -194,8 +194,9 @@ class ConstantFunctions {
 
     return d;
   }
-// String monthNumber should be int
-  String? getLatinMonth(String monthNumber) {
+
+  // String monthNumber should be int
+  String getLatinMonth(String monthNumber) {
     String d;
 
     switch (monthNumber) {

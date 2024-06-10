@@ -7,16 +7,14 @@ class LatinDateFormat {
 
     List dateArray = date.split('-').toList();
 
-    int? day = ConstantFunctions().reverseKhNum(dateArray[0].toString());
+    int day = ConstantFunctions().reverseKhNum(dateArray[0].toString());
 
-    int? month =
+    int month =
         ConstantVariables.khmerMonths.indexOf(dateArray[1], 0).toInt() + 1;
 
-    int? year = ConstantFunctions().reverseKhNum(dateArray[2]);
+    int year = ConstantFunctions().reverseKhNum(dateArray[2]);
 
-    if (day != null && month != null && year != null) {
-      latinDate = DateTime(year, month, day);
-    }
+    latinDate = DateTime(year, month, day);
 
     return latinDate;
   }
