@@ -24,7 +24,7 @@ class ConstantFunctions {
     return numString;
   }
 
-  int? convertKhNum(int n) {
+  int? converToKhNum(int n) {
     String num = n.toString();
 
     num = num.replaceAll('0', '០');
@@ -194,7 +194,7 @@ class ConstantFunctions {
 
     return d;
   }
-
+// String monthNumber should be int
   String? getLatinMonth(String monthNumber) {
     String d;
 
