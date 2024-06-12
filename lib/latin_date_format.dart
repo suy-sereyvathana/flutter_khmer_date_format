@@ -19,17 +19,23 @@ class LatinDateFormat {
 
     return latinDate;
   }
-  static DateTime fromLatinTime(String date){
-    date = date.replaceAll('០', "0");
-    date = date.replaceAll('១', "1");
-    date = date.replaceAll('២', "2");
-    date = date.replaceAll('៣', "3");
-    date = date.replaceAll('៤', "4");
-    date = date.replaceAll('៥', "5");
-    date = date.replaceAll('៦', "6");
-    date = date.replaceAll('៧', "7");
-    date = date.replaceAll('៨', "8");
-    date = date.replaceAll('៩', "9");
-    return DateFormat("HH:mm").parse(date);
+
+  static DateTime fromLatinTime(String date) {
+    return DateFormat("HH:mm").parse(date.replaceAllMapped(
+      RegExp(r'[០១២៣៤៥៦៧៨៩]'),
+      (match) => (int.parse(match
+              .group(0)!
+              .replaceAll('០', '0')
+              .replaceAll('១', '1')
+              .replaceAll('២', '2')
+              .replaceAll('៣', '3')
+              .replaceAll('៤', '4')
+              .replaceAll('៥', '5')
+              .replaceAll('៦', '6')
+              .replaceAll('៧', '7')
+              .replaceAll('៨', '8')
+              .replaceAll('៩', '9')))
+          .toString(),
+    ));
   }
 }
