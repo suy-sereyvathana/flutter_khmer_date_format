@@ -4,7 +4,9 @@ class DateFormat {
   String formatDate(DateTime date,
       {DateFormatEnum? format, String? seperate = "-"}) {
     String newDay = date.day.toString();
+
     String newMonth = "";
+
     String newYear = date.year.toString();
 
     if (date.month < 10) {
